@@ -179,7 +179,7 @@ const SignUpPage = (props) => {
       isValid = false;
     } else if (password.length < 6) {
       setPasswordError(
-        "Must be at least 6 characters long and have at least one letter, digit, uppercase, lowercase and symbol"
+        "Must be at least 6 characters long and have at least one letter, digit, uppercase, lowercase and symbol",
       );
       isValid = false;
     }

@@ -1,10 +1,10 @@
 module.exports = function (app) {
-  const modelName = 'company_addresses';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "company_addresses";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
-      companyId: { type: Schema.Types.ObjectId, ref: 'companies' },
+      companyId: { type: Schema.Types.ObjectId, ref: "companies" },
       Street1: {
         type: String,
         required: true,
@@ -84,8 +84,8 @@ module.exports = function (app) {
       },
       isDefault: { type: Boolean, required: false, default: false },
 
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

@@ -1,6 +1,6 @@
 module.exports = function (app) {
-  const modelName = 'mails';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "mails";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
@@ -19,8 +19,8 @@ module.exports = function (app) {
       },
       toHistory: { type: Schema.Types.Mixed, required: false },
 
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

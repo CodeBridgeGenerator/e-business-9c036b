@@ -1,10 +1,10 @@
 module.exports = function (app) {
-  const modelName = 'dyna_fields';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "dyna_fields";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
-      dynaLoader: { type: Schema.Types.ObjectId, ref: 'dyna_loader' },
+      dynaLoader: { type: Schema.Types.ObjectId, ref: "dyna_loader" },
       from: {
         type: String,
         required: false,
@@ -38,7 +38,7 @@ module.exports = function (app) {
         maxLength: 150,
         index: true,
         trim: true,
-        default: '',
+        default: "",
       },
       fromService: {
         type: String,
@@ -61,7 +61,7 @@ module.exports = function (app) {
         maxLength: 150,
         index: true,
         trim: true,
-        default: '',
+        default: "",
       },
       toRefService: {
         type: String,
@@ -87,8 +87,8 @@ module.exports = function (app) {
       },
       duplicates: { type: Boolean, required: true, default: false },
 
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

@@ -41,4 +41,3 @@ const PopupCard = (props) => {
 };
 
 export default PopupCard;
-

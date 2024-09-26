@@ -11,8 +11,10 @@ module.exports = function logErrors() {
         message: error.message,
         stack: "reactjs",
         details: "",
-        createdBy: typeof params?.user?._id !== 'undefined'  ? params.user._id : null,
-        updatedBy: typeof params?.user?._id !== 'undefined' ? params.user._id : null,
+        createdBy:
+          typeof params?.user?._id !== "undefined" ? params.user._id : null,
+        updatedBy:
+          typeof params?.user?._id !== "undefined" ? params.user._id : null,
       };
 
       await context.app.service("errors").create(errorData);

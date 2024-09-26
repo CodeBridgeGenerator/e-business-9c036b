@@ -1,20 +1,20 @@
 [
-    {
-        "organizationName": "Jabatan Perkhidmatan Komputer Negeri",
-        "numberOfEmployees": 205,
-        "fullTimeTrainers": 180,
-        "partTimeTrainers": 25
-    },
-    {
-        "organizationName": "Jabatan Perkhidmatan Awam Negeri",
-        "numberOfEmployees": 431,
-        "fullTimeTrainers": 321,
-        "partTimeTrainers": 110
-    },
-    {
-        "organizationName": "Jabatan Bendahari Negeri",
-        "numberOfEmployees": 348,
-        "fullTimeTrainers": 311,
-        "partTimeTrainers": 37
-    }
+  {
+    "organizationName": "Jabatan Perkhidmatan Komputer Negeri",
+    "numberOfEmployees": 205,
+    "fullTimeTrainers": 180,
+    "partTimeTrainers": 25
+  },
+  {
+    "organizationName": "Jabatan Perkhidmatan Awam Negeri",
+    "numberOfEmployees": 431,
+    "fullTimeTrainers": 321,
+    "partTimeTrainers": 110
+  },
+  {
+    "organizationName": "Jabatan Bendahari Negeri",
+    "numberOfEmployees": 348,
+    "fullTimeTrainers": 311,
+    "partTimeTrainers": 37
+  }
 ]

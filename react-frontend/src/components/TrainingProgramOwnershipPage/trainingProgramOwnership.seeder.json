@@ -1,12 +1,12 @@
 [
-    {
-        "organizationName": "Jabatan Perkhidmatan Komputer Negeri",
-        "organizationType": "Government",
-        "ownershipType": "State"
-    },
-    {
-        "organizationName": "Jabatan Perkhidmatan Awam Negeri",
-        "organizationType": "Government",
-        "ownershipType": "State"
-    }
+  {
+    "organizationName": "Jabatan Perkhidmatan Komputer Negeri",
+    "organizationType": "Government",
+    "ownershipType": "State"
+  },
+  {
+    "organizationName": "Jabatan Perkhidmatan Awam Negeri",
+    "organizationType": "Government",
+    "ownershipType": "State"
+  }
 ]

@@ -1,14 +1,14 @@
 module.exports = function (app) {
-  const modelName = 'mail_w_h';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "mail_w_h";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
       date: { type: Date, required: false },
       data: { type: Schema.Types.Mixed, required: false },
 
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

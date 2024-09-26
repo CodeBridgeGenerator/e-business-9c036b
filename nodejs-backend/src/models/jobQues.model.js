@@ -1,6 +1,6 @@
 module.exports = function (app) {
-  const modelName = 'job_ques';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "job_ques";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
@@ -49,7 +49,7 @@ module.exports = function (app) {
       end: { type: Date, required: false },
       jobId: { type: Number, required: false, min: 2, max: 1000000 },
       status: { type: Boolean, required: false, default: false },
-      dynaLoaderId: { type: Schema.Types.ObjectId, ref: 'dyna_loader' },
+      dynaLoaderId: { type: Schema.Types.ObjectId, ref: "dyna_loader" },
       email: {
         type: String,
         required: true,
@@ -60,8 +60,8 @@ module.exports = function (app) {
         trim: false,
       },
 
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

@@ -1,6 +1,6 @@
 module.exports = function (app) {
-  const modelName = 'mail_ques';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "mail_ques";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {

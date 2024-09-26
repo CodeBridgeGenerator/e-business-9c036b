@@ -1,6 +1,6 @@
 module.exports = function (app) {
-  const modelName = 'companies';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "companies";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
@@ -35,8 +35,8 @@ module.exports = function (app) {
       DateIncorporated: { type: Date, required: false },
       isdefault: { type: Boolean, required: false, default: false },
 
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

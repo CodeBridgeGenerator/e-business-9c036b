@@ -1,4 +1,4 @@
-const IORedis = require('ioredis');
+const IORedis = require("ioredis");
 const redisClient = new IORedis({
   maxRetriesPerRequest: null,
   //   host: null,

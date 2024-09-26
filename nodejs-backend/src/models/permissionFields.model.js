@@ -1,12 +1,12 @@
 module.exports = function (app) {
-  const modelName = 'permission_fields';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "permission_fields";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
       servicePermissionId: {
         type: Schema.Types.ObjectId,
-        ref: 'permission_services',
+        ref: "permission_services",
       },
       fieldName: {
         type: String,
@@ -24,8 +24,8 @@ module.exports = function (app) {
       onDetail: { type: Boolean, required: false, default: true },
       onTable: { type: Boolean, required: false, default: true },
 
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

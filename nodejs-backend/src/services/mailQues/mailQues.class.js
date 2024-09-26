@@ -1,3 +1,3 @@
-const { Service } = require('feathers-mongoose');
+const { Service } = require("feathers-mongoose");
 
 exports.MailQues = class MailQues extends Service {};

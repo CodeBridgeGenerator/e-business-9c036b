@@ -17,7 +17,8 @@ module.exports = function (app) {
       },
       user: { type: Schema.Types.Mixed, required: true },
       results: {
-        type: Schema.Types.Mixed, required: true
+        type: Schema.Types.Mixed,
+        required: true,
       },
     },
     {

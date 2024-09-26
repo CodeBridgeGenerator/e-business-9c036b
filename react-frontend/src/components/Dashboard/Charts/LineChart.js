@@ -15,7 +15,9 @@ export default function LineChart(props) {
   useEffect(() => {
     const documentStyle = getComputedStyle(document.documentElement);
     const textColor = documentStyle.getPropertyValue("--text-color");
-    const textColorSecondary = documentStyle.getPropertyValue("--text-color-secondary");
+    const textColorSecondary = documentStyle.getPropertyValue(
+      "--text-color-secondary",
+    );
     const surfaceBorder = documentStyle.getPropertyValue("--surface-border");
 
     // Updated data for more visual appeal

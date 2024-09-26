@@ -1,11 +1,11 @@
 module.exports = function (app) {
-  const modelName = 'inbox';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "inbox";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
-      from: { type: Schema.Types.ObjectId, ref: 'users' },
-      toUser: { type: Schema.Types.ObjectId, ref: 'users' },
+      from: { type: Schema.Types.ObjectId, ref: "users" },
+      toUser: { type: Schema.Types.ObjectId, ref: "users" },
       content: {
         type: String,
         required: true,
@@ -18,8 +18,8 @@ module.exports = function (app) {
       read: { type: Boolean, required: false, default: false },
       sent: { type: Date, required: false },
 
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

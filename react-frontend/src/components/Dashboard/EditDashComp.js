@@ -36,7 +36,7 @@ const EditDashComp = (props) => {
   const imageStyle = {
     width: "40px",
     height: "40px",
-    borderRadius: "50%", 
+    borderRadius: "50%",
     border: "1px solid #D30000",
     padding: "8px",
     filter: "invert(1) sepia(1) saturate(5) hue-rotate(-55deg)",

@@ -1,6 +1,6 @@
 module.exports = function (app) {
-  const modelName = 'permission_services';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "permission_services";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
@@ -19,26 +19,26 @@ module.exports = function (app) {
       read: {
         type: String,
         required: false,
-        enum: ['all', 'own', 'subordinates'],
+        enum: ["all", "own", "subordinates"],
       },
       update: {
         type: String,
         required: false,
-        enum: ['all', 'own', 'subordinate'],
+        enum: ["all", "own", "subordinate"],
       },
       delete: {
         type: String,
         required: false,
-        enum: ['all', 'own', 'subordinate'],
+        enum: ["all", "own", "subordinate"],
       },
-      profile: { type: Schema.Types.ObjectId, ref: 'profiles' },
-      roleId: { type: Schema.Types.ObjectId, ref: 'roles' },
-      positionId: { type: Schema.Types.ObjectId, ref: 'positions' },
-      employeeId: { type: Schema.Types.ObjectId, ref: 'employees' },
-      userId: { type: Schema.Types.ObjectId, ref: 'users' },
+      profile: { type: Schema.Types.ObjectId, ref: "profiles" },
+      roleId: { type: Schema.Types.ObjectId, ref: "roles" },
+      positionId: { type: Schema.Types.ObjectId, ref: "positions" },
+      employeeId: { type: Schema.Types.ObjectId, ref: "employees" },
+      userId: { type: Schema.Types.ObjectId, ref: "users" },
 
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

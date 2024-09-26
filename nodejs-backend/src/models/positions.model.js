@@ -1,10 +1,10 @@
 module.exports = function (app) {
-  const modelName = 'positions';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "positions";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
-      roleId: { type: Schema.Types.ObjectId, ref: 'roles' },
+      roleId: { type: Schema.Types.ObjectId, ref: "roles" },
       name: {
         type: String,
         required: false,

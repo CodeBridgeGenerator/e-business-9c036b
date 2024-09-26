@@ -1,6 +1,6 @@
 module.exports = function (app) {
-  const modelName = 'user_guide';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "user_guide";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
@@ -14,8 +14,8 @@ module.exports = function (app) {
         trim: false,
       },
       expiry: { type: Date, required: false },
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

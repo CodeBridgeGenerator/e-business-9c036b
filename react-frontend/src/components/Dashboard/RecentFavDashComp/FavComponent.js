@@ -7,7 +7,7 @@ import PopupCard from "../PopUpComp/popUp";
 const PinnedItems = (props) => {
   const { Pinned, pinnedItems = [], isEdit } = props;
   const [showCard, setShowCard] = useState(false);
-  
+
   const handlePopUp = () => {
     setShowCard(!showCard);
   };
@@ -15,7 +15,7 @@ const PinnedItems = (props) => {
   return (
     <div
       className="surface-card shadow-2 border-round p-3"
-      style={{ height: "10rem", position: "relative" }}  // Added position: relative here
+      style={{ height: "10rem", position: "relative" }} // Added position: relative here
     >
       <div className="flex justify-content-between align-items-center">
         <div className="flex align-items-center">
@@ -39,7 +39,7 @@ const PinnedItems = (props) => {
         />
       </div>
 
-      {showCard && <PopupCard/>}
+      {showCard && <PopupCard />}
 
       <div className="text-600 font-medium mt-3">
         {pinnedItems.map((item, index) => (

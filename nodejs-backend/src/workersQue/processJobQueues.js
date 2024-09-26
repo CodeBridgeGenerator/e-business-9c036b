@@ -1,16 +1,16 @@
-const { Queue, Worker } = require('bullmq');
-const connection = require('../services/redis/config');
-const _ = require('lodash');
-const config = require('../resources/config.json');
-const standard = require('../resources/standard.json');
+const { Queue, Worker } = require("bullmq");
+const connection = require("../services/redis/config");
+const _ = require("lodash");
+const config = require("../resources/config.json");
+const standard = require("../resources/standard.json");
 
 // Create and export the job queue
-const jobQueue = new Queue('jobQueue', { connection });
+const jobQueue = new Queue("jobQueue", { connection });
 
 // Create and export the worker
 const createJobQueWorker = (app) => {
   const worker = new Worker(
-    'jobQueue',
+    "jobQueue",
     async (job) => {
       const { data } = job;
       // console.log(app.authorization);
@@ -31,11 +31,11 @@ const createJobQueWorker = (app) => {
       }
       // console.log(destinationFields);
       const dynaFields = await app
-        .service('dynaFields')
+        .service("dynaFields")
         .find({ query: { dynaLoader: data.dynaLoaderId } });
       // console.log(data.dynaLoaderId);
       // console.log(dynaFields.data);
-      const referenceIds = _.filter(dynaFields.data, { toType: 'ObjectId' });
+      const referenceIds = _.filter(dynaFields.data, { toType: "ObjectId" });
       // console.log("referenceIds",referenceIds);
       const results = await Promise.all(
         referenceIds.map((ref) => app.service(ref.toRefService).find({})),
@@ -52,7 +52,7 @@ const createJobQueWorker = (app) => {
           const dynaField = _.find(dynaFields.data, { to2: field.fieldName });
           if (dynaField.from && row[dynaField.from]) {
             if (
-              dynaField.toType === 'ObjectId' &&
+              dynaField.toType === "ObjectId" &&
               dynaField.identifierFieldName
             ) {
               const query = {};
@@ -66,7 +66,7 @@ const createJobQueWorker = (app) => {
               } else {
                 _data[field.fieldName] = null;
               }
-            } else if (dynaField.toType === 'Date') {
+            } else if (dynaField.toType === "Date") {
               const dateParsed = Date.parse(row[dynaField.from]) || new Date();
               _data[field.fieldName] = new Date(dateParsed);
             } else {
@@ -74,8 +74,8 @@ const createJobQueWorker = (app) => {
             }
           }
         });
-        _data['createdBy'] = data.createdBy;
-        _data['updatedBy'] = data.updatedBy;
+        _data["createdBy"] = data.createdBy;
+        _data["updatedBy"] = data.updatedBy;
         inserts.push(_data);
       });
 
@@ -101,32 +101,32 @@ const createJobQueWorker = (app) => {
       if (inserts.length > 0) {
         await app.service(data.toService).create(inserts);
       } else {
-        console.log('nothing to create');
+        console.log("nothing to create");
       }
     },
     { connection },
   );
 
   // Event listeners for worker
-  worker.on('completed', (job) => {
+  worker.on("completed", (job) => {
     console.log(`JobQue ${job.id} completed successfully`);
     if (job.data) {
       try {
-        app.service('jobQues').patch(job.data._id, {
+        app.service("jobQues").patch(job.data._id, {
           end: new Date(),
           status: true,
           jobId: job.id,
         });
         const _mail = {
-          name: job.data.name.replaceAll(' ', '_').replace('=>', ''),
-          type: 'dynaloader',
-          from: 'info@cloudbasha.com',
+          name: job.data.name.replaceAll(" ", "_").replace("=>", ""),
+          type: "dynaloader",
+          from: "info@cloudbasha.com",
           recipients: [job.data.email],
           status: true,
-          subject: 'job processing',
-          templateId: 'onDynaLoader',
+          subject: "job processing",
+          templateId: "onDynaLoader",
         };
-        app.service('mailQues').create(_mail);
+        app.service("mailQues").create(_mail);
       } catch (error) {
         console.error(error);
         throw Error(error);
@@ -136,23 +136,23 @@ const createJobQueWorker = (app) => {
     }
   });
 
-  worker.on('failed', (job, err) => {
+  worker.on("failed", (job, err) => {
     console.error(`JobQue ${job.id} failed with error ${err.message}`);
     if (job.data) {
       app
-        .service('jobQues')
+        .service("jobQues")
         .patch(job.data._id, { end: new Date(), jobId: job.id });
     } else {
       console.log(`Job error and ${job.data} data not found`);
     }
   });
 
-  const jobQueService = app.service('jobQues');
+  const jobQueService = app.service("jobQues");
   jobQueService.hooks({
     after: {
       create: async (context) => {
         const { result } = context;
-        await jobQueue.add('dynaLoader', result);
+        await jobQueue.add("dynaLoader", result);
         return context;
       },
     },

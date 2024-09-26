@@ -1,6 +1,6 @@
 module.exports = function (app) {
-  const modelName = 'cbdocuments';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "cbdocuments";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
@@ -63,12 +63,12 @@ module.exports = function (app) {
 
       createdBy: {
         type: Schema.Types.ObjectId,
-        ref: 'users',
+        ref: "users",
         required: true,
       },
       updatedBy: {
         type: Schema.Types.ObjectId,
-        ref: 'users',
+        ref: "users",
         required: true,
       },
     },

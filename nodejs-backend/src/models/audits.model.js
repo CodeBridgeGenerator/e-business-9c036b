@@ -1,6 +1,6 @@
 module.exports = function (app) {
-  const modelName = 'audits';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "audits";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {

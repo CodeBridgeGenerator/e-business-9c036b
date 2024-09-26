@@ -1,13 +1,13 @@
 const LLM_API_URL = process.env.LLM_CLASS3;
-const axios = require('axios');
+const axios = require("axios");
 
 async function claude3sonnet(request, response) {
   const requestOptions = {
-    method: 'post',
+    method: "post",
     url: LLM_API_URL,
     data: request.body,
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   };
 

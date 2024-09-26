@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { classNames } from "primereact/utils";
 import Drag from "../../../assets/media/Drag.png";
 import Ellipsis from "../../../assets/media/Ellipsis Vertical.png";
@@ -15,7 +15,7 @@ const RecentComp = (props) => {
   return (
     <div
       className="surface-card shadow-2 border-round p-3"
-      style={{ height: "10rem", position: "relative" }}  // Added position: relative here
+      style={{ height: "10rem", position: "relative" }} // Added position: relative here
     >
       <div className="flex justify-content-between align-items-center">
         <div className="flex align-items-center">
@@ -30,7 +30,7 @@ const RecentComp = (props) => {
         <img
           src={Ellipsis}
           alt="Ellipsis"
-          className={classNames("mr-2", {hidden: !isEdit})}
+          className={classNames("mr-2", { hidden: !isEdit })}
           style={{
             width: "1rem",
             height: "1rem",
@@ -40,7 +40,7 @@ const RecentComp = (props) => {
         />
       </div>
 
-      {showCard && <PopupCard/>}
+      {showCard && <PopupCard />}
 
       <div className="text-600 font-medium mt-3">
         {recentItems?.map((item, index) => (

@@ -24,10 +24,10 @@ const ManageTabsPopup = (props) => {
         onClick={toggleDropdown}
         className={classNames("mr-2", { hidden: !isEdit })}
         style={{
-          color: "red",           // Red color
-          cursor: "pointer",      // Pointer on hover
-          fontWeight: "bold",     // Bold text
-          fontSize: "0.875rem",   // Slightly smaller font
+          color: "red", // Red color
+          cursor: "pointer", // Pointer on hover
+          fontWeight: "bold", // Bold text
+          fontSize: "0.875rem", // Slightly smaller font
           textDecoration: "none", // No underline
         }}
       >
@@ -39,20 +39,20 @@ const ManageTabsPopup = (props) => {
         <div
           style={{
             position: "absolute",
-            top: "1.5rem",             // Distance from the button
-            right: "0",                // Align to the right side of the container
-            width: "150px",            // Width of the dropdown
-            backgroundColor: "white",  // Background color
+            top: "1.5rem", // Distance from the button
+            right: "0", // Align to the right side of the container
+            width: "150px", // Width of the dropdown
+            backgroundColor: "white", // Background color
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Shadow for dropdown
-            borderRadius: "8px",       // Rounded corners
-            padding: "5px",            // Padding inside the dropdown
-            zIndex: 1000,              // Ensure it is above other content
+            borderRadius: "8px", // Rounded corners
+            padding: "5px", // Padding inside the dropdown
+            zIndex: 1000, // Ensure it is above other content
           }}
         >
           {/* Remove Card Button */}
           <div
             style={{
-              marginBottom: "2px",  // Space below the button
+              marginBottom: "2px", // Space below the button
             }}
           >
             <button
@@ -72,7 +72,9 @@ const ManageTabsPopup = (props) => {
                 className={classNames("mr-2")}
                 style={{ height: "1rem", marginRight: "0.5rem" }}
               />
-              <span style={{ fontSize: "14px", color: "black" }}>Edit Chart</span>
+              <span style={{ fontSize: "14px", color: "black" }}>
+                Edit Chart
+              </span>
             </button>
           </div>
 

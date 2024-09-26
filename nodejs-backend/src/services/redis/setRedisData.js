@@ -1,4 +1,4 @@
-const redisClient = require('./config');
+const redisClient = require("./config");
 
 module.exports = async function (req, res) {
   const userId = req.params.id;
@@ -9,6 +9,6 @@ module.exports = async function (req, res) {
     res.send({ results });
   } catch (error) {
     console.error(error);
-    res.status(501).send('Data not set');
+    res.status(501).send("Data not set");
   }
 };

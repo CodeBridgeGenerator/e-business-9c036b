@@ -1,14 +1,14 @@
 module.exports = function (app) {
-  const modelName = 'department_h_o_d';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "department_h_o_d";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
-      departmentId: { type: Schema.Types.ObjectId, ref: 'departments' },
-      employeeId: { type: Schema.Types.ObjectId, ref: 'employees' },
+      departmentId: { type: Schema.Types.ObjectId, ref: "departments" },
+      employeeId: { type: Schema.Types.ObjectId, ref: "employees" },
 
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

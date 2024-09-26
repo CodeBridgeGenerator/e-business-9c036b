@@ -1,19 +1,19 @@
-const { Queue, Worker } = require('bullmq');
-const connection = require('../services/redis/config');
-const sendMailService = require('../services/nodeMailer/sendMailService');
+const { Queue, Worker } = require("bullmq");
+const connection = require("../services/redis/config");
+const sendMailService = require("../services/nodeMailer/sendMailService");
 
 // Create and export the job queue
-const mailQues = new Queue('mailQues', { connection });
+const mailQues = new Queue("mailQues", { connection });
 
 const createMailQueWorker = (app) => {
-  const superAdmin = 'kana.sabaratnam@gmail.com';
+  const superAdmin = "kana.sabaratnam@gmail.com";
   const worker = new Worker(
-    'mailQues',
+    "mailQues",
     async (job) => {
       const { data } = job;
       // Add your job processing logic here
       const template = await app
-        .service('templates')
+        .service("templates")
         .find({ query: { name: data.templateId } });
 
       if (!template.data.length === 0)
@@ -29,7 +29,7 @@ const createMailQueWorker = (app) => {
         });
       }
       app
-        .service('mailQues')
+        .service("mailQues")
         .patch(job.data._id, { jobId: job.id, content: contentHTML });
       try {
         await sendMailService(
@@ -50,32 +50,32 @@ const createMailQueWorker = (app) => {
   );
 
   // Event listeners for worker
-  worker.on('completed', (job) => {
+  worker.on("completed", (job) => {
     console.log(`Mail ${job.id} completed successfully`);
     if (job.data) {
       app
-        .service('mailQues')
+        .service("mailQues")
         .patch(job.data._id, { jobId: job.id, end: new Date(), status: true });
     }
   });
 
-  worker.on('failed', async (job, err) => {
+  worker.on("failed", async (job, err) => {
     console.error(`Mail ${job.id} failed with error ${err.message}`);
     if (job.data) {
-      app.service('mailQues').patch(job.data._id, {
+      app.service("mailQues").patch(job.data._id, {
         jobId: job.id,
         end: new Date(),
         errors: err.message,
         status: false,
       });
-      job.data['errors'] = err.message;
-      job.data['project'] = process.env.PROJECT_NAME;
-      job.data['env'] = process.env.ENV;
+      job.data["errors"] = err.message;
+      job.data["project"] = process.env.PROJECT_NAME;
+      job.data["env"] = process.env.ENV;
 
       await sendMailService(
         job.data.name,
         job.data.from,
-        ['kana@cloudbasha.com', superAdmin],
+        ["kana@cloudbasha.com", superAdmin],
         `Field to send email - ${err.message}`,
         err.message,
         `<pre><code>${JSON.stringify(job.data, null, 4)}</code></pre>`,
@@ -84,13 +84,13 @@ const createMailQueWorker = (app) => {
     }
   });
 
-  const mailQuesService = app.service('mailQues');
+  const mailQuesService = app.service("mailQues");
   mailQuesService.hooks({
     after: {
       create: async (context) => {
         const { result } = context;
         if (result.recipients.length > 0)
-          await mailQues.add('mailQues', result);
+          await mailQues.add("mailQues", result);
         return context;
       },
     },

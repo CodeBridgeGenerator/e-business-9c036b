@@ -37,7 +37,7 @@ const dynaLoader = require("./dynaLoader/dynaLoader.service.js");
 const dynaFields = require("./dynaFields/dynaFields.service.js");
 const jobQues = require("./jobQues/jobQues.service.js");
 
-// gen ai 
+// gen ai
 const prompts = require("./prompts/prompts.service.js");
 const config = require("./config/config.service.js");
 const chatai = require("./chatai/chatai.service.js");
@@ -61,7 +61,6 @@ const audits = require("./audits/audits.service.js");
 // data loader for all services
 const uploader = require("./uploader/uploader.service.js");
 // 230924
-
 
 const businessInformation = require("./businessInformation/businessInformation.service.js");
 const officerInCharge = require("./officerInCharge/officerInCharge.service.js");

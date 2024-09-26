@@ -50,9 +50,7 @@ const MultipleChart = () => {
             ].map((item, index) => (
               <React.Fragment key={index}>
                 <tr className="border-b hover:bg-gray-100">
-                  <td className="p-2 flex items-center">
-                    {item.department}
-                  </td>
+                  <td className="p-2 flex items-center">{item.department}</td>
                   <td className="p-2">{item.code}</td>
                   <td className="p-2">{item.workspaces}</td>
                   <td className="p-2">{item.lastCommit}</td>
@@ -78,10 +76,19 @@ const MultipleChart = () => {
                   <tr>
                     <td colSpan="6" className="p-4 bg-gray-50">
                       <div className="flex flex-wrap gap-4">
-                        <div className="flex-1 min-w-0" style={{ width: "48%" }}>
-                          <LineChart name={`${item.department} Over Time`} isEdit={false} />
+                        <div
+                          className="flex-1 min-w-0"
+                          style={{ width: "48%" }}
+                        >
+                          <LineChart
+                            name={`${item.department} Over Time`}
+                            isEdit={false}
+                          />
                         </div>
-                        <div className="flex-1 min-w-0" style={{ width: "48%" }}>
+                        <div
+                          className="flex-1 min-w-0"
+                          style={{ width: "48%" }}
+                        >
                           <BarChart total="Total Users" isEdit={false} />
                         </div>
                       </div>

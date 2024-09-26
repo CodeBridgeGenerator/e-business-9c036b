@@ -1,6 +1,6 @@
 module.exports = function (app) {
-  const modelName = 'tickets';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "tickets";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
@@ -51,16 +51,16 @@ module.exports = function (app) {
       status: {
         type: String,
         required: false,
-        enum: ['open', 'closed', 'inprogress', 'reopened'],
+        enum: ["open", "closed", "inprogress", "reopened"],
       },
       priority: {
         type: String,
         required: false,
-        enum: ['high', 'medium', 'low', 'critical'],
+        enum: ["high", "medium", "low", "critical"],
       },
-      type: { type: String, required: false, enum: ['bug', 'feature', 'task'] },
-      reporter: { type: Schema.Types.ObjectId, ref: 'users' },
-      assignee: { type: Schema.Types.ObjectId, ref: 'users' },
+      type: { type: String, required: false, enum: ["bug", "feature", "task"] },
+      reporter: { type: Schema.Types.ObjectId, ref: "users" },
+      assignee: { type: Schema.Types.ObjectId, ref: "users" },
       closed: {
         type: String,
         required: false,
@@ -73,8 +73,8 @@ module.exports = function (app) {
         trim: true,
       },
 
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

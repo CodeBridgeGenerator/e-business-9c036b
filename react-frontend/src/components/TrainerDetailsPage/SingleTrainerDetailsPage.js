@@ -3,83 +3,104 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import client from "../../services/restClient";
-import { Tag } from 'primereact/tag';
+import { Tag } from "primereact/tag";
 import moment from "moment";
-import { InputText } from 'primereact/inputtext';
+import { InputText } from "primereact/inputtext";
 import ProjectLayout from "../Layouts/ProjectLayout";
 
-
 const SingleTrainerDetailsPage = (props) => {
-    const navigate = useNavigate();
-    const urlParams = useParams();
-    const [_entity, set_entity] = useState();
+  const navigate = useNavigate();
+  const urlParams = useParams();
+  const [_entity, set_entity] = useState();
 
-    
+  useEffect(() => {
+    //on mount
+    client
+      .service("trainerDetails")
+      .get(urlParams.singleTrainerDetailsId, {
+        query: {
+          $populate: [
+            {
+              path: "createdBy",
+              service: "users",
+              select: ["name"],
+            },
+            {
+              path: "updatedBy",
+              service: "users",
+              select: ["name"],
+            },
+          ],
+        },
+      })
+      .then((res) => {
+        set_entity(res || {});
+      })
+      .catch((error) => {
+        console.log({ error });
+        props.alert({
+          title: "TrainerDetails",
+          type: "error",
+          message: error.message || "Failed get trainerDetails",
+        });
+      });
+  }, [props, urlParams.singleTrainerDetailsId]);
 
-    useEffect(() => {
-        //on mount
-        client
-            .service("trainerDetails")
-            .get(urlParams.singleTrainerDetailsId, { query: { $populate: [            {
-                path: "createdBy",
-                service: "users",
-                select: ["name"],
-              },{
-                path: "updatedBy",
-                service: "users",
-                select: ["name"],
-              },] }})
-            .then((res) => {
-                set_entity(res || {});
-                
-            })
-            .catch((error) => {
-                console.log({ error });
-                props.alert({ title: "TrainerDetails", type: "error", message: error.message || "Failed get trainerDetails" });
-            });
-    }, [props,urlParams.singleTrainerDetailsId]);
+  const goBack = () => {
+    navigate("/trainerDetails");
+  };
 
-
-    const goBack = () => {
-        navigate("/trainerDetails");
-    };
-
-    return (
-        <ProjectLayout>
-        <div className="col-12 flex flex-column align-items-center">
-            <div className="col-10">
-                <div className="flex align-items-center justify-content-start">
-                    <Button className="p-button-text" icon="pi pi-chevron-left" onClick={() => goBack()} />
-                    <h3 className="m-0">Trainer Details</h3>
-                </div>
-                <p>trainerDetails/{urlParams.singleTrainerDetailsId}</p>
-                {/* ~cb-project-dashboard~ */}
-            </div>
-            <div className="card w-full">
-                <div className="grid ">
-
-            <div className="col-12 md:col-6 lg:col-3"><label className="text-sm text-primary">Trainer IC/Passport Number</label><p className="m-0 ml-3" >{_entity?.trainerIcPassportNumber}</p></div>
-<div className="col-12 md:col-6 lg:col-3"><label className="text-sm text-primary">Organization Name</label><p className="m-0 ml-3" >{_entity?.organizationName}</p></div>
-<div className="col-12 md:col-6 lg:col-3"><label className="text-sm text-primary">Employment Type</label><p className="m-0 ml-3" >{_entity?.employmentType}</p></div>
-<div className="col-12 md:col-6 lg:col-3"><label className="text-sm text-primary">Nationality</label><p className="m-0 ml-3" >{_entity?.nationality}</p></div>
-            
-
-                    <div className="col-12">&nbsp;</div>
-                </div>
-            </div>
+  return (
+    <ProjectLayout>
+      <div className="col-12 flex flex-column align-items-center">
+        <div className="col-10">
+          <div className="flex align-items-center justify-content-start">
+            <Button
+              className="p-button-text"
+              icon="pi pi-chevron-left"
+              onClick={() => goBack()}
+            />
+            <h3 className="m-0">Trainer Details</h3>
+          </div>
+          <p>trainerDetails/{urlParams.singleTrainerDetailsId}</p>
+          {/* ~cb-project-dashboard~ */}
         </div>
-        
-        </ProjectLayout>
-    );
+        <div className="card w-full">
+          <div className="grid ">
+            <div className="col-12 md:col-6 lg:col-3">
+              <label className="text-sm text-primary">
+                Trainer IC/Passport Number
+              </label>
+              <p className="m-0 ml-3">{_entity?.trainerIcPassportNumber}</p>
+            </div>
+            <div className="col-12 md:col-6 lg:col-3">
+              <label className="text-sm text-primary">Organization Name</label>
+              <p className="m-0 ml-3">{_entity?.organizationName}</p>
+            </div>
+            <div className="col-12 md:col-6 lg:col-3">
+              <label className="text-sm text-primary">Employment Type</label>
+              <p className="m-0 ml-3">{_entity?.employmentType}</p>
+            </div>
+            <div className="col-12 md:col-6 lg:col-3">
+              <label className="text-sm text-primary">Nationality</label>
+              <p className="m-0 ml-3">{_entity?.nationality}</p>
+            </div>
+
+            <div className="col-12">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+    </ProjectLayout>
+  );
 };
 
 const mapState = (state) => {
-    const { user, isLoggedIn } = state.auth;
-    return { user, isLoggedIn };
+  const { user, isLoggedIn } = state.auth;
+  return { user, isLoggedIn };
 };
 
 const mapDispatch = (dispatch) => ({
-    alert: (data) => dispatch.toast.alert(data),
+  alert: (data) => dispatch.toast.alert(data),
 });
 
 export default connect(mapState, mapDispatch)(SingleTrainerDetailsPage);

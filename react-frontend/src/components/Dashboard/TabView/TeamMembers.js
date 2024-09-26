@@ -163,10 +163,13 @@ const TeamMembers = (props) => {
                       className={classNames(
                         "flex items-center justify-center p-2",
                         {
-                          "bg-green-100 text-green-500": member.status === "Active",
-                          "bg-orange-100 text-orange-500": member.status === "Pending set up",
-                          "bg-red-100 text-red-500": member.status === "Deactivated",
-                        }
+                          "bg-green-100 text-green-500":
+                            member.status === "Active",
+                          "bg-orange-100 text-orange-500":
+                            member.status === "Pending set up",
+                          "bg-red-100 text-red-500":
+                            member.status === "Deactivated",
+                        },
                       )}
                       style={{
                         minWidth: "120px",
@@ -181,7 +184,13 @@ const TeamMembers = (props) => {
                     <img
                       src={EllipsisHorizontal}
                       alt="Ellipsis Icon"
-                      style={{ marginLeft: "auto", marginRight: "0", width: "15px", height: "15px", marginTop: "10px" }} // Adjust spacing
+                      style={{
+                        marginLeft: "auto",
+                        marginRight: "0",
+                        width: "15px",
+                        height: "15px",
+                        marginTop: "10px",
+                      }} // Adjust spacing
                     />
                   </div>
                 </td>

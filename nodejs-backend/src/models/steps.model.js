@@ -1,10 +1,10 @@
 module.exports = function (app) {
-  const modelName = 'steps';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "steps";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
-      userGuideID: { type: Schema.Types.ObjectId, ref: 'user_guide' },
+      userGuideID: { type: Schema.Types.ObjectId, ref: "user_guide" },
       Steps: {
         type: String,
         required: true,
@@ -24,8 +24,8 @@ module.exports = function (app) {
         trim: false,
       },
 
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

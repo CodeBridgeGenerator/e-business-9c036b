@@ -17,20 +17,19 @@ import Drag from "../../assets/media/Drag.png";
 import ChartPopup from "./PopUpComp/ChartPopup";
 import MultipleChart from "./TabView/MultipleCharts";
 
-
 export const DataManagement = (props) => {
   const [isEdit, setIsEdit] = useState(false);
   const [ActiveTab, setActiveTab] = useState(0);
   const [showCard, setShowCard] = useState(false);
 
-  useEffect( () => {
+  useEffect(() => {
     get();
-  })
+  });
 
   const get = async () => {
     const cache = await props.get();
     console.log(props.cache);
-  }
+  };
 
   const handlePopUp = () => {
     setShowCard(!showCard);
@@ -42,19 +41,25 @@ export const DataManagement = (props) => {
   //   { text: "Job Ques", subtext: "Reports", src: Employees },
   // ];
 
-  const recentItems = 
-    props.cache.pastTabsAry?.map((i) => { return {
-      text: i.label, subtext: "Notification", src: i.src }
-    })
+  const recentItems = props.cache.pastTabsAry?.map((i) => {
+    return {
+      text: i.label,
+      subtext: "Notification",
+      src: i.src,
+    };
+  });
 
   // const pinnedItems = [
   //   { text: "Generate Templates", subtext: "Reports", src: Generate },
   // ];
 
-  const pinnedItems =
-    props.cache.pastTabsAry?.map((i) => { return {
-      text: i.label, subtext: "Messaging", src: i.icon
-    }})
+  const pinnedItems = props.cache.pastTabsAry?.map((i) => {
+    return {
+      text: i.label,
+      subtext: "Messaging",
+      src: i.icon,
+    };
+  });
 
   const teamMembers = [
     {
@@ -105,7 +110,11 @@ export const DataManagement = (props) => {
         <div className="grid">
           {/* Recent Component */}
           <div className="col-12 md:col-4 mb-3">
-            <RecentComp title={"Recent"} isEdit={isEdit} recentItems={recentItems} />
+            <RecentComp
+              title={"Recent"}
+              isEdit={isEdit}
+              recentItems={recentItems}
+            />
           </div>
 
           {/* Pinned Items Component */}

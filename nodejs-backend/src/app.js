@@ -1,32 +1,32 @@
-const path = require('path');
-const favicon = require('serve-favicon');
-const compress = require('compression');
-const helmet = require('helmet');
-const cors = require('cors');
-const logger = require('./logger');
-const feathers = require('@feathersjs/feathers');
-const configuration = require('@feathersjs/configuration');
-const express = require('@feathersjs/express');
-const socketio = require('@feathersjs/socketio');
+const path = require("path");
+const favicon = require("serve-favicon");
+const compress = require("compression");
+const helmet = require("helmet");
+const cors = require("cors");
+const logger = require("./logger");
+const feathers = require("@feathersjs/feathers");
+const configuration = require("@feathersjs/configuration");
+const express = require("@feathersjs/express");
+const socketio = require("@feathersjs/socketio");
 
-const middleware = require('./middleware');
-const services = require('./services');
-const appHooks = require('./app.hooks');
-const channels = require('./channels');
-const createWorker = require('./workersQue');
-const genAi = require('./routes/genAi');
-const redis = require('./services/redis');
-const authentication = require('./authentication');
-const mongoose = require('./mongoose');
-const setup = require('./setup');
-const redisCache = require('feathers-redis-cache');
-const redisClient = require('./services/redis/config');
+const middleware = require("./middleware");
+const services = require("./services");
+const appHooks = require("./app.hooks");
+const channels = require("./channels");
+const createWorker = require("./workersQue");
+const genAi = require("./routes/genAi");
+const redis = require("./services/redis");
+const authentication = require("./authentication");
+const mongoose = require("./mongoose");
+const setup = require("./setup");
+const redisCache = require("feathers-redis-cache");
+const redisClient = require("./services/redis/config");
 
 const app = express(feathers());
 // Load app socketio
 app.configure(
   socketio((io) => {
-    io.on('connection', (socket) => {
+    io.on("connection", (socket) => {
       console.log(socket);
     });
 
@@ -51,8 +51,8 @@ app.use(cors());
 app.use(compress());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/', express.static(app.get('public')));
-app.use(favicon(path.join(app.get('public'), 'favicon.ico')));
+app.use("/", express.static(app.get("public")));
+app.use(favicon(path.join(app.get("public"), "favicon.ico")));
 // Set up Plugins and providers
 app.configure(express.rest());
 app.configure(mongoose);
@@ -69,10 +69,10 @@ createWorker(app);
 app.configure(genAi);
 app.configure(redis);
 app.configure(redisCache.client({ client: redisClient }));
-app.configure(redisCache.services({ pathPrefix: '/cache' }));
+app.configure(redisCache.services({ pathPrefix: "/cache" }));
 app.use(express.notFound());
 app.use(express.errorHandler({ logger }));
 // Initialize setup on app start
-setup(app).catch((err) => console.error('Setup error:', err));
+setup(app).catch((err) => console.error("Setup error:", err));
 app.hooks(appHooks);
 module.exports = app;

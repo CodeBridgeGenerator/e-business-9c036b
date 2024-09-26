@@ -1,6 +1,6 @@
 module.exports = function (app) {
-  const modelName = 'chatai';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "chatai";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
@@ -9,23 +9,23 @@ module.exports = function (app) {
         required: true,
         unique: true,
         lowercase: false,
-        default: '',
+        default: "",
       },
       description: {
         type: String,
         unique: false,
         lowercase: false,
-        default: '',
+        default: "",
       },
       serviceName: {
         type: String,
         unique: false,
         lowercase: false,
-        default: '',
+        default: "",
       },
 
-      createdBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-      updatedBy: { type: Schema.Types.ObjectId, ref: 'users', required: true },
+      createdBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
+      updatedBy: { type: Schema.Types.ObjectId, ref: "users", required: true },
     },
     {
       timestamps: true,

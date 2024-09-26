@@ -1,6 +1,6 @@
 module.exports = function (app) {
-  const modelName = 'user_invites';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "user_invites";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
@@ -19,10 +19,10 @@ module.exports = function (app) {
       code: { type: Number, required: false, min: 0, max: 1000000 },
       position: {
         type: Schema.Types.ObjectId,
-        ref: 'positions',
+        ref: "positions",
         required: false,
       },
-      role: { type: Schema.Types.ObjectId, ref: 'roles', required: false },
+      role: { type: Schema.Types.ObjectId, ref: "roles", required: false },
       sendMailCounter: {
         type: Number,
         required: false,

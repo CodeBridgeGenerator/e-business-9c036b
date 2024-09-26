@@ -289,27 +289,27 @@ const ProjectLayout = (props) => {
       case "userManagementDash":
         return <UserManagement />;
       case "messaging":
-        return <Messaging />
+        return <Messaging />;
       case "errors":
-        return <Errors />
+        return <Errors />;
       case "adminControl":
-        return <AdminControl />
+        return <AdminControl />;
       case "tests":
         return <TestsPage />;
       case "companyDash":
         return <CompanyData />;
       case "dash":
         return <Dashboard />;
-case "businessInformation":
-                return <BusinessInformationPage />;
-case "officerInCharge":
-                return <OfficerInChargePage />;
-case "trainingProviderSInformation":
-                return <TrainingProviderSInformationPage />;
-case "trainingProgramOwnership":
-                return <TrainingProgramOwnershipPage />;
-case "trainerDetails":
-                return <TrainerDetailsPage />;
+      case "businessInformation":
+        return <BusinessInformationPage />;
+      case "officerInCharge":
+        return <OfficerInChargePage />;
+      case "trainingProviderSInformation":
+        return <TrainingProviderSInformationPage />;
+      case "trainingProgramOwnership":
+        return <TrainingProgramOwnershipPage />;
+      case "trainerDetails":
+        return <TrainerDetailsPage />;
       /* ~cb-add-thurthy~ */
       default:
         return props.children ? props.children : <DynamicDashboards />;
@@ -708,167 +708,232 @@ case "trainerDetails":
                     App Services
                   </div>
                   <ul className="list-none p-0 m-0">
-
-<li
-                onClick={() => {
-                  setCurrentActiveTab2("businessInformation");
-                }}
-                className={classNames("mb-3 flex align-items-start p-3", {
-                  "bg-yellow-700": props?.currentActiveTab2 === "businessInformation",
-                })}
-                style={{ borderRadius: "12px" }}
-              >
-                <i
-                  className="pi pi-user text-xl mr-3 "
-                  style={{ color: props?.currentActiveTab2 !== "businessInformation" ? "black" : "white" }}
-                ></i>
-                <div className="flex flex-column">
-                  <span
-                    className={classNames({
-                      "text-white": props?.currentActiveTab2 === "businessInformation",
-                      "text-black": props?.currentActiveTab2 !== "businessInformation",
-                    })}
-                  >
-                  Business Information
-                  </span>
-                  <p
-                    className={classNames("mt-2 mb-0 line-height-3 ", {
-                      "text-yellow-500": props?.currentActiveTab2 === "businessInformation",
-                      "text-yellow-700": props?.currentActiveTab2 !== "businessInformation",
-                    })}
-                  >
-                    Accumsan sit amet nulla facilisi morbi tempus iaculis.
-                  </p>
-                </div>
-              </li>
-<li
-                onClick={() => {
-                  setCurrentActiveTab2("officerInCharge");
-                }}
-                className={classNames("mb-3 flex align-items-start p-3", {
-                  "bg-yellow-700": props?.currentActiveTab2 === "officerInCharge",
-                })}
-                style={{ borderRadius: "12px" }}
-              >
-                <i
-                  className="pi pi-user text-xl mr-3 "
-                  style={{ color: props?.currentActiveTab2 !== "officerInCharge" ? "black" : "white" }}
-                ></i>
-                <div className="flex flex-column">
-                  <span
-                    className={classNames({
-                      "text-white": props?.currentActiveTab2 === "officerInCharge",
-                      "text-black": props?.currentActiveTab2 !== "officerInCharge",
-                    })}
-                  >
-                  Officer In Charge
-                  </span>
-                  <p
-                    className={classNames("mt-2 mb-0 line-height-3 ", {
-                      "text-yellow-500": props?.currentActiveTab2 === "officerInCharge",
-                      "text-yellow-700": props?.currentActiveTab2 !== "officerInCharge",
-                    })}
-                  >
-                    Accumsan sit amet nulla facilisi morbi tempus iaculis.
-                  </p>
-                </div>
-              </li>
-<li
-                onClick={() => {
-                  setCurrentActiveTab2("trainingProviderSInformation");
-                }}
-                className={classNames("mb-3 flex align-items-start p-3", {
-                  "bg-yellow-700": props?.currentActiveTab2 === "trainingProviderSInformation",
-                })}
-                style={{ borderRadius: "12px" }}
-              >
-                <i
-                  className="pi pi-user text-xl mr-3 "
-                  style={{ color: props?.currentActiveTab2 !== "trainingProviderSInformation" ? "black" : "white" }}
-                ></i>
-                <div className="flex flex-column">
-                  <span
-                    className={classNames({
-                      "text-white": props?.currentActiveTab2 === "trainingProviderSInformation",
-                      "text-black": props?.currentActiveTab2 !== "trainingProviderSInformation",
-                    })}
-                  >
-                  Training Provider's Information
-                  </span>
-                  <p
-                    className={classNames("mt-2 mb-0 line-height-3 ", {
-                      "text-yellow-500": props?.currentActiveTab2 === "trainingProviderSInformation",
-                      "text-yellow-700": props?.currentActiveTab2 !== "trainingProviderSInformation",
-                    })}
-                  >
-                    Accumsan sit amet nulla facilisi morbi tempus iaculis.
-                  </p>
-                </div>
-              </li>
-<li
-                onClick={() => {
-                  setCurrentActiveTab2("trainingProgramOwnership");
-                }}
-                className={classNames("mb-3 flex align-items-start p-3", {
-                  "bg-yellow-700": props?.currentActiveTab2 === "trainingProgramOwnership",
-                })}
-                style={{ borderRadius: "12px" }}
-              >
-                <i
-                  className="pi pi-user text-xl mr-3 "
-                  style={{ color: props?.currentActiveTab2 !== "trainingProgramOwnership" ? "black" : "white" }}
-                ></i>
-                <div className="flex flex-column">
-                  <span
-                    className={classNames({
-                      "text-white": props?.currentActiveTab2 === "trainingProgramOwnership",
-                      "text-black": props?.currentActiveTab2 !== "trainingProgramOwnership",
-                    })}
-                  >
-                  Training Program Ownership
-                  </span>
-                  <p
-                    className={classNames("mt-2 mb-0 line-height-3 ", {
-                      "text-yellow-500": props?.currentActiveTab2 === "trainingProgramOwnership",
-                      "text-yellow-700": props?.currentActiveTab2 !== "trainingProgramOwnership",
-                    })}
-                  >
-                    Accumsan sit amet nulla facilisi morbi tempus iaculis.
-                  </p>
-                </div>
-              </li>
-<li
-                onClick={() => {
-                  setCurrentActiveTab2("trainerDetails");
-                }}
-                className={classNames("mb-3 flex align-items-start p-3", {
-                  "bg-yellow-700": props?.currentActiveTab2 === "trainerDetails",
-                })}
-                style={{ borderRadius: "12px" }}
-              >
-                <i
-                  className="pi pi-user text-xl mr-3 "
-                  style={{ color: props?.currentActiveTab2 !== "trainerDetails" ? "black" : "white" }}
-                ></i>
-                <div className="flex flex-column">
-                  <span
-                    className={classNames({
-                      "text-white": props?.currentActiveTab2 === "trainerDetails",
-                      "text-black": props?.currentActiveTab2 !== "trainerDetails",
-                    })}
-                  >
-                  Trainer Details
-                  </span>
-                  <p
-                    className={classNames("mt-2 mb-0 line-height-3 ", {
-                      "text-yellow-500": props?.currentActiveTab2 === "trainerDetails",
-                      "text-yellow-700": props?.currentActiveTab2 !== "trainerDetails",
-                    })}
-                  >
-                    Accumsan sit amet nulla facilisi morbi tempus iaculis.
-                  </p>
-                </div>
-              </li>
+                    <li
+                      onClick={() => {
+                        setCurrentActiveTab2("businessInformation");
+                      }}
+                      className={classNames("mb-3 flex align-items-start p-3", {
+                        "bg-yellow-700":
+                          props?.currentActiveTab2 === "businessInformation",
+                      })}
+                      style={{ borderRadius: "12px" }}
+                    >
+                      <i
+                        className="pi pi-user text-xl mr-3 "
+                        style={{
+                          color:
+                            props?.currentActiveTab2 !== "businessInformation"
+                              ? "black"
+                              : "white",
+                        }}
+                      ></i>
+                      <div className="flex flex-column">
+                        <span
+                          className={classNames({
+                            "text-white":
+                              props?.currentActiveTab2 ===
+                              "businessInformation",
+                            "text-black":
+                              props?.currentActiveTab2 !==
+                              "businessInformation",
+                          })}
+                        >
+                          Business Information
+                        </span>
+                        <p
+                          className={classNames("mt-2 mb-0 line-height-3 ", {
+                            "text-yellow-500":
+                              props?.currentActiveTab2 ===
+                              "businessInformation",
+                            "text-yellow-700":
+                              props?.currentActiveTab2 !==
+                              "businessInformation",
+                          })}
+                        >
+                          Accumsan sit amet nulla facilisi morbi tempus iaculis.
+                        </p>
+                      </div>
+                    </li>
+                    <li
+                      onClick={() => {
+                        setCurrentActiveTab2("officerInCharge");
+                      }}
+                      className={classNames("mb-3 flex align-items-start p-3", {
+                        "bg-yellow-700":
+                          props?.currentActiveTab2 === "officerInCharge",
+                      })}
+                      style={{ borderRadius: "12px" }}
+                    >
+                      <i
+                        className="pi pi-user text-xl mr-3 "
+                        style={{
+                          color:
+                            props?.currentActiveTab2 !== "officerInCharge"
+                              ? "black"
+                              : "white",
+                        }}
+                      ></i>
+                      <div className="flex flex-column">
+                        <span
+                          className={classNames({
+                            "text-white":
+                              props?.currentActiveTab2 === "officerInCharge",
+                            "text-black":
+                              props?.currentActiveTab2 !== "officerInCharge",
+                          })}
+                        >
+                          Officer In Charge
+                        </span>
+                        <p
+                          className={classNames("mt-2 mb-0 line-height-3 ", {
+                            "text-yellow-500":
+                              props?.currentActiveTab2 === "officerInCharge",
+                            "text-yellow-700":
+                              props?.currentActiveTab2 !== "officerInCharge",
+                          })}
+                        >
+                          Accumsan sit amet nulla facilisi morbi tempus iaculis.
+                        </p>
+                      </div>
+                    </li>
+                    <li
+                      onClick={() => {
+                        setCurrentActiveTab2("trainingProviderSInformation");
+                      }}
+                      className={classNames("mb-3 flex align-items-start p-3", {
+                        "bg-yellow-700":
+                          props?.currentActiveTab2 ===
+                          "trainingProviderSInformation",
+                      })}
+                      style={{ borderRadius: "12px" }}
+                    >
+                      <i
+                        className="pi pi-user text-xl mr-3 "
+                        style={{
+                          color:
+                            props?.currentActiveTab2 !==
+                            "trainingProviderSInformation"
+                              ? "black"
+                              : "white",
+                        }}
+                      ></i>
+                      <div className="flex flex-column">
+                        <span
+                          className={classNames({
+                            "text-white":
+                              props?.currentActiveTab2 ===
+                              "trainingProviderSInformation",
+                            "text-black":
+                              props?.currentActiveTab2 !==
+                              "trainingProviderSInformation",
+                          })}
+                        >
+                          Training Provider's Information
+                        </span>
+                        <p
+                          className={classNames("mt-2 mb-0 line-height-3 ", {
+                            "text-yellow-500":
+                              props?.currentActiveTab2 ===
+                              "trainingProviderSInformation",
+                            "text-yellow-700":
+                              props?.currentActiveTab2 !==
+                              "trainingProviderSInformation",
+                          })}
+                        >
+                          Accumsan sit amet nulla facilisi morbi tempus iaculis.
+                        </p>
+                      </div>
+                    </li>
+                    <li
+                      onClick={() => {
+                        setCurrentActiveTab2("trainingProgramOwnership");
+                      }}
+                      className={classNames("mb-3 flex align-items-start p-3", {
+                        "bg-yellow-700":
+                          props?.currentActiveTab2 ===
+                          "trainingProgramOwnership",
+                      })}
+                      style={{ borderRadius: "12px" }}
+                    >
+                      <i
+                        className="pi pi-user text-xl mr-3 "
+                        style={{
+                          color:
+                            props?.currentActiveTab2 !==
+                            "trainingProgramOwnership"
+                              ? "black"
+                              : "white",
+                        }}
+                      ></i>
+                      <div className="flex flex-column">
+                        <span
+                          className={classNames({
+                            "text-white":
+                              props?.currentActiveTab2 ===
+                              "trainingProgramOwnership",
+                            "text-black":
+                              props?.currentActiveTab2 !==
+                              "trainingProgramOwnership",
+                          })}
+                        >
+                          Training Program Ownership
+                        </span>
+                        <p
+                          className={classNames("mt-2 mb-0 line-height-3 ", {
+                            "text-yellow-500":
+                              props?.currentActiveTab2 ===
+                              "trainingProgramOwnership",
+                            "text-yellow-700":
+                              props?.currentActiveTab2 !==
+                              "trainingProgramOwnership",
+                          })}
+                        >
+                          Accumsan sit amet nulla facilisi morbi tempus iaculis.
+                        </p>
+                      </div>
+                    </li>
+                    <li
+                      onClick={() => {
+                        setCurrentActiveTab2("trainerDetails");
+                      }}
+                      className={classNames("mb-3 flex align-items-start p-3", {
+                        "bg-yellow-700":
+                          props?.currentActiveTab2 === "trainerDetails",
+                      })}
+                      style={{ borderRadius: "12px" }}
+                    >
+                      <i
+                        className="pi pi-user text-xl mr-3 "
+                        style={{
+                          color:
+                            props?.currentActiveTab2 !== "trainerDetails"
+                              ? "black"
+                              : "white",
+                        }}
+                      ></i>
+                      <div className="flex flex-column">
+                        <span
+                          className={classNames({
+                            "text-white":
+                              props?.currentActiveTab2 === "trainerDetails",
+                            "text-black":
+                              props?.currentActiveTab2 !== "trainerDetails",
+                          })}
+                        >
+                          Trainer Details
+                        </span>
+                        <p
+                          className={classNames("mt-2 mb-0 line-height-3 ", {
+                            "text-yellow-500":
+                              props?.currentActiveTab2 === "trainerDetails",
+                            "text-yellow-700":
+                              props?.currentActiveTab2 !== "trainerDetails",
+                          })}
+                        >
+                          Accumsan sit amet nulla facilisi morbi tempus iaculis.
+                        </p>
+                      </div>
+                    </li>
                     {/* ~cb-add-services-card~ */}
                   </ul>
                 </div>

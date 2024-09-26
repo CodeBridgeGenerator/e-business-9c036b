@@ -1,6 +1,6 @@
 module.exports = function (app) {
-  const modelName = 'profiles';
-  const mongooseClient = app.get('mongooseClient');
+  const modelName = "profiles";
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
   const schema = new Schema(
     {
@@ -13,7 +13,7 @@ module.exports = function (app) {
         index: false,
         trim: false,
       },
-      userId: { type: Schema.Types.ObjectId, required: true, ref: 'users' },
+      userId: { type: Schema.Types.ObjectId, required: true, ref: "users" },
       image: {
         type: String,
         required: false,
@@ -34,19 +34,19 @@ module.exports = function (app) {
         index: true,
         trim: true,
       },
-      department: { type: Schema.Types.ObjectId, ref: 'departments' },
+      department: { type: Schema.Types.ObjectId, ref: "departments" },
       hod: { type: Boolean, required: true, default: false },
-      section: { type: Schema.Types.ObjectId, ref: 'sections' },
+      section: { type: Schema.Types.ObjectId, ref: "sections" },
       hos: { type: Boolean, required: true, default: false },
-      role: { type: Schema.Types.ObjectId, required: true, ref: 'roles' },
+      role: { type: Schema.Types.ObjectId, required: true, ref: "roles" },
       position: {
         type: Schema.Types.ObjectId,
         required: true,
-        ref: 'positions',
+        ref: "positions",
       },
-      manager: { type: Schema.Types.ObjectId, ref: 'users' },
-      company: { type: Schema.Types.ObjectId, ref: 'companies' },
-      branch: { type: Schema.Types.ObjectId, ref: 'branches' },
+      manager: { type: Schema.Types.ObjectId, ref: "users" },
+      company: { type: Schema.Types.ObjectId, ref: "companies" },
+      branch: { type: Schema.Types.ObjectId, ref: "branches" },
       skills: {
         type: [String],
         required: false,
@@ -58,8 +58,8 @@ module.exports = function (app) {
         index: true,
         trim: true,
       },
-      address: { type: Schema.Types.ObjectId, ref: 'user_addresses' },
-      phone: { type: Schema.Types.ObjectId, ref: 'user_phones' },
+      address: { type: Schema.Types.ObjectId, ref: "user_addresses" },
+      phone: { type: Schema.Types.ObjectId, ref: "user_phones" },
     },
     {
       timestamps: true,

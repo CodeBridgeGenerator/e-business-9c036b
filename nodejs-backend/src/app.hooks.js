@@ -1,6 +1,6 @@
 // Application hooks that run for every service
-const logErrors = require('../src/utils/logErrors');
-const audit = require('../src/utils/audit');
+const logErrors = require("../src/utils/logErrors");
+const audit = require("../src/utils/audit");
 
 module.exports = {
   before: {

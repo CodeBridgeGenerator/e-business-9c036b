@@ -52,11 +52,12 @@ const TotalComponent = (props) => {
           onClick={handlePopUp}
         />
       </div>
-      
-      {showCard && <PopupCard/>}
+
+      {showCard && <PopupCard />}
 
       <div className="mt-6">
-        <div className="flex align-items-center"
+        <div
+          className="flex align-items-center"
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -64,16 +65,20 @@ const TotalComponent = (props) => {
           }}
         >
           <div className="flex align-items-center">
-            <strong style={{
-              fontSize: "2rem",
-              fontWeight: "600",
-              color: "#2A4454",
-            }}
+            <strong
+              style={{
+                fontSize: "2rem",
+                fontWeight: "600",
+                color: "#2A4454",
+              }}
             >
               {total}
             </strong>
           </div>
-          <div className="flex align-items-center mt-2" style={{ color: "green" }}>
+          <div
+            className="flex align-items-center mt-2"
+            style={{ color: "green" }}
+          >
             <img
               src={Increase}
               alt="Increase"

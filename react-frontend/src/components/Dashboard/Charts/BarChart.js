@@ -166,7 +166,6 @@ export default function BarChart(props) {
         </div>
         <ThisWeek isEdit={isEdit} onClick={handlePopUp} />
 
-
         <div className="flex align-items-center">
           <img
             src={Drag}

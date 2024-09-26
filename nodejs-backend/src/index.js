@@ -1,18 +1,18 @@
 /* eslint-disable no-console */
-require('dotenv').config();
-const logger = require('./logger');
-const app = require('./app');
-const port = app.get('port');
+require("dotenv").config();
+const logger = require("./logger");
+const app = require("./app");
+const port = app.get("port");
 const server = app.listen(port);
 
-process.on('unhandledRejection', (reason, p) =>
-  logger.error('Unhandled Rejection at: Promise ', p, reason),
+process.on("unhandledRejection", (reason, p) =>
+  logger.error("Unhandled Rejection at: Promise ", p, reason),
 );
 
-server.on('listening', () =>
+server.on("listening", () =>
   logger.info(
-    'CodeBridge Application started on http://%s:%d',
-    app.get('host'),
+    "CodeBridge Application started on http://%s:%d",
+    app.get("host"),
     port,
   ),
 );
