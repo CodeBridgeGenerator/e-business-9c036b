@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "66e678d947480b243fc573fc",
+    "roleId": "66b9c8b1dc0d1ef9ac30a89e",
+    "name": "Staff",
+    "isDefault": true
+  },
+  {
+    "_id": "66e678d947480b243fc573fb",
+    "roleId": "66b9c8b1dc0d1ef9ac30a8a1",
+    "name": "External",
+    "isDefault": true
+  },
+  {
+    "_id": "66e678d947480b243fc573fd",
+    "roleId": "66b9c8b1dc0d1ef9ac30a8a7",
+    "name": "Admin",
+    "isDefault": false
+  }
+]

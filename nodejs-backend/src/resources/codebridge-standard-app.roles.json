@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "66b9c8b1dc0d1ef9ac30a89e",
+    "name": "Staff",
+    "description": "Internal Users of the company",
+    "isDefault": false
+  },
+  {
+    "_id": "66b9c8b1dc0d1ef9ac30a8a1",
+    "name": "External",
+    "description": "External user that have limited access to the system",
+    "isDefault": true
+  },
+  {
+    "_id": "66b9c8b1dc0d1ef9ac30a8a4",
+    "name": "Developer",
+    "description": "For the developer to manage the bugs and maintenance",
+    "isDefault": false
+  },
+  {
+    "_id": "66b9c8b1dc0d1ef9ac30a8a7",
+    "name": "Super",
+    "description": "Super user that is capable of all functions and features.",
+    "isDefault": false
+  },
+  {
+    "_id": "66b9c8b1dc0d1ef9ac30a8aa",
+    "name": "Admin",
+    "description": "Internal staff user that is responsible for first level support and system maintenance.",
+    "isDefault": false
+  }
+]

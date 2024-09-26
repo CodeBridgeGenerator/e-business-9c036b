@@ -1,0 +1,151 @@
+@layer tailwind-base, tailwind-utilities;
+
+@layer tailwind-base {
+	@tailwind base;
+}
+
+@layer tailwind-utilities {
+	@tailwind components;
+	@tailwind utilities;
+}
+
+:root {
+	--primary-color: #d30000 !important;
+	--secondary-color: #2a4454 !important;
+}
+
+@font-face {
+	font-family: 'RobotoMono';
+	src:
+		local('RobotoMono'),
+		url(../assets/fonts/RobotoMono-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Praktika';
+	src:
+		local('Praktika'),
+		url(../assets/fonts/Praktika-Light.otf) format('opentype');
+}
+@font-face {
+	font-family: 'MarlinGeo';
+	src:
+		local('MarlinGeo'),
+		url(../assets/fonts/MarlinGeo-Regular.otf) format('opentype');
+}
+@font-face {
+	font-family: 'MarlinGeo-Bold';
+	src:
+		local('MarlinGeo-Bold'),
+		url(../assets/fonts/MarlinGeo-Bold.otf) format('opentype');
+}
+
+.hover:hover {
+	cursor: pointer;
+}
+.zoom:hover {
+	transform: scale(102%);
+}
+
+.transform-delay {
+	transition: transform 0.1s;
+}
+
+.small-prime-tooltip {
+	transform: scale(70%);
+}
+
+.bord {
+	border: 1px solid red;
+}
+
+.my-shadow {
+	box-shadow: 7px 7px 8px -1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 7px 7px 8px -1px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 7px 7px 8px -1px rgba(0, 0, 0, 0.2);
+}
+
+.hover-red:hover {
+	color: var(--red-400) !important;
+}
+
+.footer-link:hover {
+	text-decoration: underline;
+}
+
+.p-inputtext::placeholder {
+	color: var(--surface-400);
+}
+
+.no-effect-focus:focus,
+.no-focus-effect:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.bord {
+	border: 1px solid rgb(255, 5, 255);
+}
+
+.background-image {
+	background-image: url(../assets/media/background.png);
+	background-size: cover;
+	background-position: center;
+}
+
+/* Change the unchecked checkbox background color */
+.p-checkbox-box {
+	background-color: white;
+	border-color: #dee2e6;
+}
+
+/* Change the checked checkbox background color */
+.p-highlight .p-checkbox-box {
+	background-color: var(--primary-color);
+	border-color: var(--primary-color);
+}
+
+.p-highlight .p-stepper-number {
+	background-color: var(--primary-color);
+}
+
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.no-spinner {
+	-moz-appearance: textfield; /* Firefox */
+}
+
+.login-faq .p-accordion-tab {
+	background: none !important;
+	border: none !important;
+}
+
+.login-faq .p-accordion-header a {
+	background: none !important;
+	border: none !important;
+}
+
+.login-faq .p-accordion-content {
+	background: none !important;
+	border: none !important;
+}
+
+.login-faq .p-accordion-header a {
+	background: none !important;
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.login-faq .p-accordion-tab {
+	@apply !border-solid !border-t !border-b-0 !border-grey !border-l-0 !border-r-0;
+}
+
+/* last tab */
+.login-faq .p-accordion-tab:last-child {
+	@apply !border-b !border-solid !border-grey;
+}

@@ -1,0 +1,113 @@
+[
+  {
+    "name": "onDynaLoader",
+    "subject": "Data Loader Completed",
+    "body": "The Job Id : {{id}}",
+    "variables": [
+      "id"
+    ],
+    "createdAt": {
+      "$date": "2024-09-15T23:40:22.361Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-15T23:40:22.361Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "onCodeVerify",
+    "subject": "Email Verification Code",
+    "body": "<p>Hi {{name}},</p><p><br></p><p><br></p><p>Your email verification is required.</p><p><br></p><p><br></p><p><strong>The Verification Code : {{code}}</strong></p><p><br></p><p><strong><span class=\"ql-cursor\">﻿</span></strong></p><p><br></p><p>This is an automated email.</p>",
+    "variables": [
+      "id"
+    ],
+    "createdAt": {
+      "$date": "2024-09-15T23:40:22.361Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-15T23:40:22.361Z"
+    }
+  },
+  {
+    "name": "onUserConfirmation",
+    "subject": "Data Loader Completed",
+    "body": "The Job Id : {{id}}",
+    "variables": [
+      "id"
+    ],
+    "createdAt": {
+      "$date": "2024-09-15T23:40:22.362Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-15T23:40:22.362Z"
+    }
+  },
+  {
+    "name": "onWelcomeEmail",
+    "subject": "Data Loader Completed",
+    "body": "The Job Id : {{id}}",
+    "variables": [
+      "id"
+    ],
+    "createdAt": {
+      "$date": "2024-09-15T23:40:22.362Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-15T23:40:22.362Z"
+    }
+  },
+  {
+    "name": "onChangeForgotPassword",
+    "subject": "Reset Password Link",
+    "body": "<p>Hi {{name}},</p><p><br></p><p><br></p><p>Password Reset for : {{email}}</p><p><br></p><p><br></p><p>&lt;p&gt;&lt;a href=\"{{clientUrl}}\" target=\"_blank\" rel=\"noopener noreferrer\"&gt; Reset Link &lt;/a&gt;&lt;/p&gt;</p><p><br></p><p><br></p><p><br></p><p>Please follow the link to change your password.</p><p><br></p><p><br></p><p>This is an automated email.</p><p><br></p>",
+    "variables": [
+      "clientUrl",
+      "name",
+      "email"
+    ],
+    "createdAt": {
+      "$date": "2024-09-15T23:40:22.362Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-15T23:40:22.362Z"
+    }
+  },
+  {
+    "name": "onChangeForgotPasswordFailed",
+    "subject": "Failed to send failed password reset link",
+    "body": "The Job Id : {{id}}",
+    "variables": [
+      "id"
+    ],
+    "createdAt": {
+      "$date": "2024-09-15T23:40:22.362Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-15T23:40:22.362Z"
+    }
+  },
+  {
+    "name": "onError",
+    "subject": "Error Captured",
+    "body": "The Job Id : {{id}}",
+    "variables": ["id"]
+  },
+  {
+    "_id": {
+      "$oid": "66ea701fd2eb2fd8c83f0e45"
+    },
+    "name": "onFailedRecordNotification",
+    "subject": "Failed Records Notification",
+    "body": "<p>Hi {{recipientName}},</p><p><br></p><p>Your file upload contained some failed records.</p><p><br></p><p>Here are the details of the failed records:</p><p><br></p><p><strong style=\"color: rgb(230, 0, 0);\">{{failedRecordDetails}}</strong></p><p><br></p><p><br></p><p>The detailed list of failed records is attached as an Excel file.</p><p><br></p><p>This is an automated email.</p>",
+    "variables": [
+      "id"
+    ],
+    "createdAt": {
+      "$date": "2024-09-18T06:15:59.775Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-18T13:55:15.157Z"
+    },
+    "__v": 0
+  }
+]

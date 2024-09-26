@@ -1,0 +1,26 @@
+[
+    {
+        "officerName": "Abdul Hadi Wathiq",
+        "designation": "FT19",
+        "telephoneNumber": "0123451123",
+        "icPassportNumber": "999999124555",
+        "email": "hadi@gmail.com",
+        "organizationName": "Jabatan Perkhidmatan Komputer Negeri"
+    },
+    {
+        "officerName": "Dorothy",
+        "designation": "FA44",
+        "telephoneNumber": "0144411231",
+        "icPassportNumber": "999915124442",
+        "email": "dorothy@gmail.com",
+        "organizationName": "Jabatan Perkhidmatan Awam Negeri"
+    },
+    {
+        "officerName": "Ian Kevin",
+        "designation": "FT19",
+        "telephoneNumber": "0612212314",
+        "icPassportNumber": "992112125557",
+        "email": "ian@gmail.com",
+        "organizationName": "Jabatan Perkhidmatan Komputer Negeri"
+    }
+]
